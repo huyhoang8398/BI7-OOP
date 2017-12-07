@@ -11,9 +11,14 @@ Students are expected to:
 Member list
 =====================================
 
-*Add student list of your group here*
+DO Duy Huy Hoang - USTHBI7-071
+BUI Quoc Trung
+PHAM Van Duan
+LE Minh Anh
+
+
 
 Project description
 =====================================
 
-*Add your project description here*
+Topic 9: develop a Java application to evaluate teaching quality at USTH bachelor program
