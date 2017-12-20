@@ -1,10 +1,11 @@
+
+/**
+ * @author ${huyhoang8398}
+ *
+ * ${Ken illasviel}
+ */
 package oop;
-import java.io.PrintWriter;
 import javax.swing.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.io.*;
-import java.util.Scanner;
 
 
 public class main {
@@ -13,9 +14,6 @@ public class main {
         win.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         win.pack();
         win.setVisible(true);
-
-
-
     }
 
 }
