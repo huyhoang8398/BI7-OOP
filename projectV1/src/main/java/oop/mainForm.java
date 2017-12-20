@@ -24,6 +24,7 @@ public class mainForm extends JFrame {
     private JTextField lecField;
 
     private JButton send;
+    private JButton open;
     private JPanel cardLayout;
 
     private JLabel courseName;
@@ -31,7 +32,6 @@ public class mainForm extends JFrame {
     private JLabel helpLabel;
     private JLabel subLabel;
     private JLabel bug1;
-    private JLabel Label1;
     private JLabel Label2;
     private JLabel Label3;
     private JLabel Label4;
@@ -41,6 +41,7 @@ public class mainForm extends JFrame {
     private JLabel Label8;
 
     private JLabel bLabel1;
+    private JLabel bLabel2;
 
     private JRadioButton label1, label2, label3,label4,label5,label6,label7,
             label8,label9,label10,label11,label12,label13,label14,label15,label16,label17,label18,label19,label20,
@@ -209,22 +210,28 @@ public class mainForm extends JFrame {
 
     class bottomPanel extends JPanel implements ActionListener {
         public bottomPanel(){
-            GridLayout layout = new GridLayout(4,1);
+            GridLayout layout = new GridLayout(3,2,8,8 );
             setLayout(layout);
             //scale
-            bLabel1 = new JLabel("                ");
-            add(bLabel1);
+
 
             JLabel bLabel4 = new JLabel("  Please rate the quality of the course *");
             add(bLabel4);
 
-            send = new JButton("SEND");
-            add(send);
+            bLabel1 = new JLabel("                ");
+            add(bLabel1);
 
+            send = new JButton("Submit");
+            add(send);
             send.setHorizontalTextPosition(SwingConstants.CENTER);
             send.addActionListener(this);
 
+            open = new JButton("Open your text file");
+            add(open);
+            open.addActionListener(this);
+
         }
+        //Write to text file
         public void actionPerformed(ActionEvent e){
             if(e.getSource()==send){
                 CourseName = ("");
@@ -356,15 +363,20 @@ public class mainForm extends JFrame {
                 }
 
             }
+            if (e.getSource() == open){
+                JFileChooser chooser = new JFileChooser("/Users/huyhoang8398/Desktop/EVTF.txt");
+                int c = chooser.showOpenDialog(null);
+                if (c == JFileChooser.APPROVE_OPTION){
+                    File file = chooser.getSelectedFile();
+                    try {
+                        Desktop.getDesktop().open(file);
+                    }
+                    catch (IOException EE){
+                        System.out.println("Failed");
+                    }
+                }
+            }
+
         }
     }
-
-
-
-
-
-
-
-
-
 }
