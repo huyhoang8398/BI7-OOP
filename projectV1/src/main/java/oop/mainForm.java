@@ -1,33 +1,29 @@
 package oop;
 
 import javax.swing.*;
+import javax.xml.crypto.Data;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 
-public class mainForm extends JFrame  {
+public class mainForm extends JFrame {
     public mainForm() {
-        //JPanel p = new JPanel();
         JPanel p = new JPanel(new BorderLayout());
         setTitle("Evalate Teaching Application");
-        //p.setSize(800,800);
-        //p.setLocation(100,100);
         p.add(new topPanel(),BorderLayout.NORTH);
-
         p.add(new leftPanel(),BorderLayout.WEST);
         p.add(new rightPanel(),BorderLayout.EAST);
-        p.add(new b4bottom(),BorderLayout.SOUTH);
-        //p.add(new bottomPanel(),BorderLayout.AFTER_LAST_LINE);
+        //p.add(new b4bottom(),BorderLayout.SOUTH);
+        p.add(new bottomPanel(),BorderLayout.SOUTH);
         add(p);
     }
+    private String CourseName, LecName;
 
     private JTextField toField;
     private JTextField lecField;
 
     private JButton send;
     private JPanel cardLayout;
-    private JButton buttons;
-
 
     private JLabel courseName;
     private JLabel lecName;
@@ -44,7 +40,6 @@ public class mainForm extends JFrame  {
     private JLabel Label8;
 
     private JLabel bLabel1;
-    private JLabel bLabel2;
 
     private
 
@@ -89,26 +84,20 @@ public class mainForm extends JFrame  {
             Label2 = new JLabel("  The organization of the lesson were logical and easy to follow ");
             add(Label2);
 
-
             Label3 = new JLabel("  The content of lecture met your expectations ");
             add(Label3);
-
 
             Label4 = new JLabel("  The exercises/assignments/labworks were useful ");
             add(Label4);
 
-
             Label5 = new JLabel("  The lecturer explained things clearly ");
             add(Label5);
-
 
             Label6 = new JLabel("  The lecturer answered student's questions clearly during classes ");
             add(Label6);
 
-
             Label7 = new JLabel("  The lecturer encouraged students participation during classes ");
             add(Label7);
-
 
             Label8 = new JLabel("  This class gave you opportunities to improve your teamworks skills ");
             add(Label8);
@@ -198,9 +187,6 @@ public class mainForm extends JFrame  {
             add(label34);
             JRadioButton label35= new JRadioButton("5");
             add(label35);
-
-
-
         }
 
     }
@@ -213,31 +199,53 @@ public class mainForm extends JFrame  {
             cardLayout.add(A);
             JButton H = new JButton("High");
             cardLayout.add(H);
-
-
-
         }
     }
 
-    class bottomPanel extends JPanel {
+    class bottomPanel extends JPanel implements ActionListener {
         public bottomPanel(){
             GridLayout layout = new GridLayout(4,1);
             setLayout(layout);
-
+            //scale
             bLabel1 = new JLabel("                ");
             add(bLabel1);
-
-            bLabel2 = new JLabel("                 ");
-            add(bLabel2);
 
             JLabel bLabel4 = new JLabel("  Please rate the quality of the course *");
             add(bLabel4);
 
             send = new JButton("SEND");
-            send.setHorizontalTextPosition(SwingConstants.CENTER);
             add(send);
+
+            send.setHorizontalTextPosition(SwingConstants.CENTER);
+            send.addActionListener(this);
+
+        }
+        public void actionPerformed(ActionEvent e){
+            if(e.getSource()==send){
+                CourseName = ("");
+                LecName = ("");
+                CourseName = toField.getText();
+                LecName = lecField.getText();
+
+                try{
+                    BufferedWriter reader = new BufferedWriter(new FileWriter(new File("/Users/huyhoang8398/Desktop/EVTF.txt"),true));
+                    reader.write("Course name "+CourseName);
+                    reader.newLine();
+                    reader.close();
+                    System.out.println("done");
+
+
+
+                }
+                catch (IOException E){
+                    System.out.println("Error is "+E);
+                }
+
+            }
         }
     }
+
+
 
 
 
