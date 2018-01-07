@@ -302,14 +302,20 @@ public class mainForm extends JFrame {
                 for (int i = 0; i<5;i++) {
                     if (label1.isSelected()) {
                         ques1 = label1.getText();
+                        label1.setSelected(false);
                     } else if (label2.isSelected()) {
                         ques1 = label2.getText();
+                        label2.setSelected(false);
                     } else if (label3.isSelected()) {
                         ques1 = label3.getText();
+                        label3.setSelected(false);
                     } else if (label4.isSelected()) {
                         ques1 = label4.getText();
+                        label4.setSelected(false);
                     } else if (label5.isSelected()) {
                         ques1 = label5.getText();
+                        label5.setSelected(false);
+
 
                     }
                 }
@@ -317,28 +323,48 @@ public class mainForm extends JFrame {
                 for (int i1 = 0; i1<5;i1++) {
                     if (label6.isSelected() == true) {
                         ques2 = label6.getText();
+                        label6.setSelected(false);
+
                     } else if (label7.isSelected() == true) {
                         ques2 = label7.getText();
+                        label7.setSelected(false);
+
                     } else if (label8.isSelected() == true) {
                         ques2 = label8.getText();
+                        label8.setSelected(false);
+
                     } else if (label9.isSelected() == true) {
                         ques2 = label9.getText();
+                        label9.setSelected(false);
+
                     } else if (label10.isSelected() == true) {
                         ques2 = label10.getText();
+                        label10.setSelected(false);
+
                     }
                 }
                 ques3 = ("");
                 for (int i2 = 1; i2<5;i2++) {
                     if (label11.isSelected() == true) {
-                        ques3 = label1.getText();
+                        ques3 = label11.getText();
+                        label11.setSelected(false);
+
                     } else if (label12.isSelected() == true) {
                         ques3 = label12.getText();
+                        label12.setSelected(false);
+
                     } else if (label13.isSelected() == true) {
                         ques3 = label13.getText();
+                        label13.setSelected(false);
+
                     } else if (label14.isSelected() == true) {
                         ques3 = label14.getText();
+                        label14.setSelected(false);
+
                     } else if (label15.isSelected() == true) {
                         ques3 = label15.getText();
+                        label15.setSelected(false);
+
 
                     }
                 }
@@ -346,14 +372,24 @@ public class mainForm extends JFrame {
                 for (int i3 = 0; i3<5;i3++) {
                     if (label16.isSelected() == true) {
                         ques4 = label16.getText();
+                        label16.setSelected(false);
+
                     } else if (label17.isSelected() == true) {
                         ques4 = label17.getText();
+                        label17.setSelected(false);
+
                     } else if (label18.isSelected() == true) {
                         ques4 = label18.getText();
+                        label18.setSelected(false);
+
                     } else if (label19.isSelected() == true) {
                         ques4 = label19.getText();
+                        label19.setSelected(false);
+
                     } else if (label20.isSelected() == true) {
                         ques4 = label20.getText();
+                        label20.setSelected(false);
+
 
                     }
                 }
@@ -361,14 +397,24 @@ public class mainForm extends JFrame {
                 for (int i4 = 0; i4 < 5; i4++) {
                     if (label21.isSelected()==true) {
                         ques5 = label21.getText();
+                        label21.setSelected(false);
+
                     } else if (label22.isSelected()==true) {
                         ques5 = label22.getText();
+                        label22.setSelected(false);
+
                     } else if (label23.isSelected()==true) {
                         ques5 = label23.getText();
+                        label23.setSelected(false);
+
                     }else if (label24.isSelected()==true) {
                         ques5 = label24.getText();
+                        label24.setSelected(false);
+
                     } else if (label25.isSelected()==true) {
                         ques5 = label25.getText();
+                        label25.setSelected(false);
+
                     }
 
                 }
@@ -376,29 +422,43 @@ public class mainForm extends JFrame {
                 for (int i5 = 0; i5<5;i5++) {
                     if (label26.isSelected() == true) {
                         ques6 = label26.getText();
+                        label26.setSelected(false);
+
                     } else if (label27.isSelected() == true) {
                         ques6 = label27.getText();
+                        label27.setSelected(false);
+
                     } else if (label28.isSelected() == true) {
                         ques6 = label28.getText();
+                        label28.setSelected(false);
+
                     } else if (label29.isSelected() == true) {
                         ques6 = label29.getText();
+                        label29.setSelected(false);
+
                     } else if (label30.isSelected() == true) {
                         ques6 = label30.getText();
+                        label30.setSelected(false);
+
                     }
                 }
                 ques7 = ("");
                 for (int i6 = 0; i6< 5; i6++) {
                     if (label31.isSelected() == true) {
                         ques7 = label31.getText();
+                        label31.setSelected(false);
                     } else if (label32.isSelected() == true) {
                         ques7 = label32.getText();
+                        label32.setSelected(false);
                     } else if (label33.isSelected() == true) {
                         ques7 = label33.getText();
+                        label33.setSelected(false);
                     } else if (label34.isSelected() == true) {
                         ques7 = label34.getText();
+                        label34.setSelected(false);
                     } else if (label35.isSelected() == true) {
                         ques7 = label35.getText();
-
+                        label35.setSelected(false);
                     }
                 }
 
@@ -524,7 +584,10 @@ public class mainForm extends JFrame {
                     System.out.println("done");
 
 
+
+
                 }
+
                 catch (IOException E){
                     System.out.println("Error is "+E);
                 }
