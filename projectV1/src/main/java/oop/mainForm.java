@@ -15,35 +15,9 @@ import java.awt.event.*;
 import java.io.*;
 
 public class mainForm extends JFrame {
-    public mainForm() {
-        JPanel p = new JPanel(new BorderLayout());
-        setTitle("Evalate Teaching Quality Application");
-        //cant resize app
-        setResizable(false);
-
-        p.add(new topPanel(),BorderLayout.NORTH);
-        p.add(new leftPanel(),BorderLayout.WEST);
-        p.add(new rightPanel(),BorderLayout.EAST);
-        //p.add(new b4bottom(),BorderLayout.SOUTH);
-        p.add(new bottomPanel(),BorderLayout.SOUTH);
-        //p.add(new dev1(),BorderLayout.AFTER_LAST_LINE);
-        add(p);
-
-        //Center app to center in Macbook
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-
-        int height = screenSize.height;
-        int width = screenSize.width;
-        this.setSize((int) (width/1.2), height/2);
-
-        // center the jframe on screen
-        this.setLocationRelativeTo(null);
-
-    }
-
-
     private String CourseName, LecName;
     private String ques1,ques2,ques3,ques4,ques5,ques6,ques7,value ;
+    private String ques1T = "1", ques2T = "2", ques3T ="3", ques4T = "4", ques5T = "5" ;
 
     private JTextField toField;
     private JTextField lecField;
@@ -71,12 +45,37 @@ public class mainForm extends JFrame {
 
     private JComboBox comBox;
 
-
     private JRadioButton label1, label2, label3,label4,label5,label6,label7,
             label8,label9,label10,label11,label12,label13,label14,label15,
             label16,label17,label18,label19,label20,label21,label22,label23,
             label24,label25,label26,label27,label28,label29,label30,label31,label32,label33,label34,label35;
 
+    public mainForm() {
+        JPanel p = new JPanel(new BorderLayout());
+        setTitle("Evalate Teaching Quality Application");
+        //cant resize app
+        setResizable(false);
+        //p.setBackground(new Color(179,246,252));
+
+        p.add(new topPanel(),BorderLayout.NORTH);
+        p.add(new leftPanel(),BorderLayout.WEST);
+        p.add(new rightPanel(),BorderLayout.EAST);
+        //p.add(new b4bottom(),BorderLayout.SOUTH);
+        p.add(new bottomPanel(),BorderLayout.SOUTH);
+        //p.add(new dev1(),BorderLayout.AFTER_LAST_LINE);
+        add(p);
+
+        //Center app to center in Macbook
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+
+        int height = screenSize.height;
+        int width = screenSize.width;
+        this.setSize((int) (width/1.2), height/2);
+
+        // center the jframe on screen
+        this.setLocationRelativeTo(null);
+
+    }
 
 
     class topPanel extends JPanel {
@@ -84,6 +83,8 @@ public class mainForm extends JFrame {
 
             GridLayout layout = new GridLayout(4,2,5,5);
             setLayout(layout);
+            //setBackground(new Color(179,246,252));
+
 
             courseName = new JLabel("  Course Name: ");
             add(courseName).setLocation(100,100);
@@ -124,6 +125,7 @@ public class mainForm extends JFrame {
         public leftPanel(){
             GridLayout layout = new GridLayout(7,1,10,10);
             setLayout(layout);
+            //setBackground(new Color(179,246,252));
             Label2 = new JLabel("  The organization of the lesson were logical and easy to follow ");
             Label2.setFont(new Font("Serif", Font.BOLD,15));
             add(Label2);
@@ -159,6 +161,8 @@ public class mainForm extends JFrame {
         public rightPanel(){
             GridLayout layout = new GridLayout(7,1,100,5);
             setLayout(layout);
+            //setBackground(new Color(179,246,252));
+
             //question 1 checkbox
             label1= new JRadioButton("1");
             add(label1);
@@ -182,6 +186,7 @@ public class mainForm extends JFrame {
             add(label9);
             label10= new JRadioButton("5");
             add(label10);
+
             //question 3 checkbox
             label11= new JRadioButton("1");
             add(label11);
@@ -192,8 +197,9 @@ public class mainForm extends JFrame {
             label14= new JRadioButton("4");
             add(label14);
             label15= new JRadioButton("5");
-            //question 4 checkbox
             add(label15);
+            //question 4 checkbox
+
             label16= new JRadioButton("1");
             add(label16);
             label17= new JRadioButton("2");
@@ -204,17 +210,19 @@ public class mainForm extends JFrame {
             add(label19);
             label20= new JRadioButton("5");
             add(label20);
+
             //question 5 checkbox
-            label23= new JRadioButton("1");
-            add(label23);
-            label21= new JRadioButton("2");
+            label21= new JRadioButton("1");
             add(label21);
-            label22= new JRadioButton("3");
+            label22= new JRadioButton("2");
             add(label22);
+            label23= new JRadioButton("3");
+            add(label23);
             label24= new JRadioButton("4");
             add(label24);
             label25= new JRadioButton("5");
             add(label25);
+
             //question 6 checkbox
             label26= new JRadioButton("1");
             add(label26);
@@ -239,34 +247,15 @@ public class mainForm extends JFrame {
             add(label35);
         }
 
-    }
-    class b4bottom extends JPanel {
-        public b4bottom(){
-            cardLayout= new JPanel(new CardLayout());
-            JButton L = new JButton("Very Low");
-            cardLayout.add(L);
-            JButton A = new JButton("Average");
-            cardLayout.add(A);
-            JButton H = new JButton("High");
-            cardLayout.add(H);
-        }
-    }
 
-    class dev1 extends JPanel{
-        public dev1(){
-            GridLayout layout = new GridLayout(1,1);
-            setLayout(layout);
-            dev = new JLabel("Created by HuyHoang8398");
-            dev.setHorizontalAlignment(JLabel.CENTER);
-            dev.setVerticalAlignment(JLabel.CENTER);
-            add(dev);
-        }
     }
 
     class bottomPanel extends JPanel implements ActionListener {
         public bottomPanel(){
             GridLayout layout = new GridLayout(4,2,2,2 );
             setLayout(layout);
+            //setBackground(new Color(179,246,252));
+
             //scale
             JLabel bLabel4 = new JLabel("  Please rate the quality of the course *");
             bLabel4.setFont(new Font("Serif", Font.ITALIC,18));
@@ -294,7 +283,6 @@ public class mainForm extends JFrame {
 
             open = new JButton("Open your text file");
             open.setPreferredSize(new Dimension(45,45));
-
             add(open);
             open.addActionListener(this);
 
@@ -302,108 +290,212 @@ public class mainForm extends JFrame {
         //Write to text file
         public void actionPerformed(ActionEvent e){
             if(e.getSource()==send){
-                JOptionPane.showMessageDialog(null,"DONE" ,"Successful",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null,"DONE\n Your Evaluate information was stored by EVT.txt file " ,"Successful",JOptionPane.INFORMATION_MESSAGE);
                 CourseName = ("");
                 LecName = ("");
                 CourseName = toField.getText();
                 LecName = lecField.getText();
+                toField.setText("");
+                lecField.setText(null);
+
                 ques1 = ("");
-                ques1 = label1.getText();
+                for (int i = 0; i<5;i++) {
+                    if (label1.isSelected()) {
+                        ques1 = label1.getText();
+                    } else if (label2.isSelected()) {
+                        ques1 = label2.getText();
+                    } else if (label3.isSelected()) {
+                        ques1 = label3.getText();
+                    } else if (label4.isSelected()) {
+                        ques1 = label4.getText();
+                    } else if (label5.isSelected()) {
+                        ques1 = label5.getText();
+
+                    }
+                }
                 ques2 = ("");
-                ques2 = label2.getText();
+                for (int i1 = 0; i1<5;i1++) {
+                    if (label6.isSelected() == true) {
+                        ques2 = label6.getText();
+                    } else if (label7.isSelected() == true) {
+                        ques2 = label7.getText();
+                    } else if (label8.isSelected() == true) {
+                        ques2 = label8.getText();
+                    } else if (label9.isSelected() == true) {
+                        ques2 = label9.getText();
+                    } else if (label10.isSelected() == true) {
+                        ques2 = label10.getText();
+                    }
+                }
                 ques3 = ("");
-                ques3 = label3.getText();
+                for (int i2 = 1; i2<5;i2++) {
+                    if (label11.isSelected() == true) {
+                        ques3 = label1.getText();
+                    } else if (label12.isSelected() == true) {
+                        ques3 = label12.getText();
+                    } else if (label13.isSelected() == true) {
+                        ques3 = label13.getText();
+                    } else if (label14.isSelected() == true) {
+                        ques3 = label14.getText();
+                    } else if (label15.isSelected() == true) {
+                        ques3 = label15.getText();
+
+                    }
+                }
                 ques4 = ("");
-                ques4 = label4.getText();
+                for (int i3 = 0; i3<5;i3++) {
+                    if (label16.isSelected() == true) {
+                        ques4 = label16.getText();
+                    } else if (label17.isSelected() == true) {
+                        ques4 = label17.getText();
+                    } else if (label18.isSelected() == true) {
+                        ques4 = label18.getText();
+                    } else if (label19.isSelected() == true) {
+                        ques4 = label19.getText();
+                    } else if (label20.isSelected() == true) {
+                        ques4 = label20.getText();
+
+                    }
+                }
                 ques5 = ("");
-                ques5 = label5.getText();
+                for (int i4 = 0; i4 < 5; i4++) {
+                    if (label21.isSelected()==true) {
+                        ques5 = label21.getText();
+                    } else if (label22.isSelected()==true) {
+                        ques5 = label22.getText();
+                    } else if (label23.isSelected()==true) {
+                        ques5 = label23.getText();
+                    }else if (label24.isSelected()==true) {
+                        ques5 = label24.getText();
+                    } else if (label25.isSelected()==true) {
+                        ques5 = label25.getText();
+                    }
+
+                }
                 ques6 = ("");
-                ques6 = label6.getText();
+                for (int i5 = 0; i5<5;i5++) {
+                    if (label26.isSelected() == true) {
+                        ques6 = label26.getText();
+                    } else if (label27.isSelected() == true) {
+                        ques6 = label27.getText();
+                    } else if (label28.isSelected() == true) {
+                        ques6 = label28.getText();
+                    } else if (label29.isSelected() == true) {
+                        ques6 = label29.getText();
+                    } else if (label30.isSelected() == true) {
+                        ques6 = label30.getText();
+                    }
+                }
                 ques7 = ("");
-                ques7 = label7.getText();
+                for (int i6 = 0; i6< 5; i6++) {
+                    if (label31.isSelected() == true) {
+                        ques7 = label31.getText();
+                    } else if (label32.isSelected() == true) {
+                        ques7 = label32.getText();
+                    } else if (label33.isSelected() == true) {
+                        ques7 = label33.getText();
+                    } else if (label34.isSelected() == true) {
+                        ques7 = label34.getText();
+                    } else if (label35.isSelected() == true) {
+                        ques7 = label35.getText();
+
+                    }
+                }
+
                 value = ("");
                 value = comBox.getSelectedItem().toString();
 
-
-
                 try{
                     BufferedWriter reader = new BufferedWriter(new FileWriter(new File("/Users/huyhoang8398/Desktop/EVTF.txt"),true));
-                    if(ques1.equals("1"))
-                        ques1 ="Strongly disagree";
-                    if(ques1.equals("2"))
-                        ques1 ="Disagree";
-                    if(ques1.equals("3"))
-                        ques1 ="Agree";
-                    if(ques1.equals("4"))
-                        ques1 ="Neither agree or disagree";
-                    if (ques1.equals("5"))
-                        ques1 ="Strongly Agree";
+                for (int i7 = 0; i7<5;i7++) {
+                    if (ques1.equals(ques1T))
+                        ques1 = "Strongly disagree";
+                    else if (ques1.equals(ques2T))
+                        ques1 = "Disagree";
+                    else if (ques1.equals(ques3T))
+                        ques1 = "Neither agree or disagree";
+                    else if (ques1.equals(ques4T))
+                        ques1 = "Agree";
+                    else if (ques1.equals(ques5T))
+                        ques1 = "Strongly Agree";
+                }
+                for (int i8 = 0; i8 <5;i8++) {
+                    if (ques2.equals(ques1T))
+                        ques2 = "Strongly disagree";
+                    if (ques2.equals(ques2T))
+                        ques2 = "Disagree";
+                    if (ques2.equals(ques3T))
+                        ques2 = "Neither agree or disagree";
+                    if (ques2.equals(ques4T))
+                        ques2 = "Agree";
+                    if (ques2.equals(ques5T))
+                        ques2 = "Strongly Agree";
+                }
+                for (int i9 = 0; i9 <5;i9++) {
 
-                    if(ques2.equals("1"))
-                        ques2 ="Strongly disagree";
-                    if(ques2.equals("2"))
-                        ques2 ="Disagree";
-                    if(ques2.equals("3"))
-                        ques2 ="Agree";
-                    if(ques2.equals("4"))
-                        ques2 ="Neither agree or disagree";
-                    if (ques2.equals("5"))
-                        ques2 ="Strongly Agree";
+                    if (ques3.equals(ques1T))
+                        ques3 = "Strongly disagree";
+                    if (ques3.equals(ques2T))
+                        ques3 = "Disagree";
+                    if (ques3.equals(ques3T))
+                        ques3 = "Neither agree or disagree";
+                    if (ques3.equals(ques4T))
+                        ques3 = "Agree";
+                    if (ques3.equals(ques5T))
+                        ques3 = "Strongly Agree";
+                }
+                for (int i10 = 0; i10 <5;i10++) {
 
-                    if(ques3.equals("1"))
-                        ques3 ="Strongly disagree";
-                    if(ques3.equals("2"))
-                        ques3 ="Disagree";
-                    if(ques3.equals("3"))
-                        ques3 ="Agree";
-                    if(ques3.equals("4"))
-                        ques3 ="Neither agree or disagree";
-                    if (ques3.equals("5"))
-                        ques3 ="Strongly Agree";
+                    if (ques4.equals(ques1T))
+                        ques4 = "Strongly disagree";
+                    if (ques4.equals(ques2T))
+                        ques4 = "Disagree";
+                    if (ques4.equals(ques3T))
+                        ques4 = "Neither agree or disagree";
+                    if (ques4.equals(ques4T))
+                        ques4 = "Agree";
+                    if (ques4.equals(ques5T))
+                        ques4 = "Strongly Agree";
+                }
+                for (int i11 = 0; i11<5;i11++) {
+                    if (ques5.equals(ques1T))
+                        ques5 = "Strongly disagree";
+                    if (ques5.equals(ques2T))
+                        ques5 = "Disagree";
+                    if (ques5.equals(ques3T))
+                        ques5 = "Neither agree or disagree";
+                    if (ques5.equals(ques4T))
+                        ques5 = "Agree";
+                    if (ques5.equals(ques5T))
+                        ques5 = "Strongly Agree";
+                }
+                for (int i12=0; i12<5;i12++) {
+                    if (ques6.equals(ques1T))
+                        ques6 = "Strongly disagree";
+                    if (ques6.equals(ques2T))
+                        ques6 = "Disagree";
+                    if (ques6.equals(ques3T))
+                        ques6 = "Neither agree or disagree";
+                    if (ques6.equals(ques4T))
+                        ques6 = "Agree";
+                    if (ques6.equals(ques5T))
+                        ques6 = "Strongly Agree";
+                }
+                for (int i13 =0; i13<5;i13++) {
+                    if (ques7.equals(ques1T))
+                        ques7 = "Strongly disagree";
+                    if (ques7.equals(ques2T))
+                        ques7 = "Disagree";
+                    if (ques7.equals(ques3T))
+                        ques7 = "Neither agree or disagree";
+                    if (ques7.equals(ques4T))
+                        ques7 = "Agree";
+                    if (ques7.equals(ques5T))
+                        ques7 = "Strongly Agree";
+                }
 
-                    if(ques4.equals("1"))
-                        ques4 ="Strongly disagree";
-                    if(ques4.equals("2"))
-                        ques4 ="Disagree";
-                    if(ques4.equals("3"))
-                        ques4 ="Agree";
-                    if(ques4.equals("4"))
-                        ques4 ="Neither agree or disagree";
-                    if (ques4.equals("5"))
-                        ques4 ="Strongly Agree";
-
-                    if(ques5.equals("1"))
-                        ques5 ="Strongly disagree";
-                    if(ques5.equals("2"))
-                        ques5 ="Disagree";
-                    if(ques5.equals("3"))
-                        ques5 ="Agree";
-                    if(ques5.equals("4"))
-                        ques5 ="Neither agree or disagree";
-                    if (ques5.equals("5"))
-                        ques5 ="Strongly Agree";
-
-                    if(ques6.equals("1"))
-                        ques6 ="Strongly disagree";
-                    if(ques6.equals("2"))
-                        ques6 ="Disagree";
-                    if(ques6.equals("3"))
-                        ques6 ="Agree";
-                    if(ques6.equals("4"))
-                        ques6 ="Neither agree or disagree";
-                    if (ques6.equals("5"))
-                        ques6 ="Strongly Agree";
-
-                    if(ques7.equals("1"))
-                        ques7 ="Strongly disagree";
-                    if(ques7.equals("2"))
-                        ques7 ="Disagree";
-                    if(ques7.equals("3"))
-                        ques7 ="Agree";
-                    if(ques7.equals("4"))
-                        ques7 ="Neither agree or disagree";
-                    if (ques7.equals("5"))
-                        ques7 ="Strongly Agree";
+                    reader.write("                      ");
+                    reader.newLine();
 
                     reader.write("----------------------");
                     reader.newLine();

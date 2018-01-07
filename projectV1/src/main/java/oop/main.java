@@ -13,6 +13,7 @@ public class main {
         mainForm win = new mainForm();
         win.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         win.pack();
+
         win.setVisible(true);
     }
 
