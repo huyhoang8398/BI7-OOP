@@ -52,7 +52,7 @@ public class mainForm extends JFrame {
 
     public mainForm() {
         JPanel p = new JPanel(new BorderLayout());
-        setTitle("Evalate Teaching Quality Application");
+        setTitle("Evaluate Teaching Quality Application");
         //cant resize app
         setResizable(false);
         //p.setBackground(new Color(179,246,252));
@@ -560,9 +560,9 @@ public class mainForm extends JFrame {
                     reader.write("----------------------");
                     reader.newLine();
 
-                    reader.write("Course name:\t "+CourseName);
+                    reader.write("Course name:\t "+LecName);
                     reader.newLine();
-                    reader.write("Lecturer name:\t "+LecName);
+                    reader.write("Lecturer name:\t "+CourseName);
                     reader.newLine();
                     reader.write("The organization of the lesson were logical and easy to follow:\t"+ques1);
                     reader.newLine();
